@@ -6,15 +6,22 @@ Running at [http://afternoon-reef-51666.herokuapp.com/donations/](http://afterno
 
 Your task is to:
 
-1. Add a page with a form for CREATING new donations in the database:
-  * The page should have a form, with a field for the donor name and a field for the amount of the donation.
-  * The method of the form should be POST.
+1. Add a page with a form for CREATING new donations in the database: [COMPLETE]
+  * The page should have a form, with a field for the donor name and a field for the amount of the donation. [COMPLETE]
+  * The method of the form should be POST. [COMPLETE]
   * You will need to create a template for this page, inside of the `templates` directory. The template should inherit from `base.jinja2`.
-  * You should create a route and a handler function inside of `main.py`. The handler function should accept both GET requests and POST requests.
-    * If the handler receives a GET request, then it should render the template for the donation creation page.
-    * If the handler receives a POST request (a form submission), then it should attempt to retrieve the name of the donor and the amount of the donation from the form submission. It should retrieve the donor from the database with the indicated name, and create a new donation with the indicated donor and donation amount. Then it should redirect the visitor to the home page.
+  * You should create a route and a handler function inside of `main.py`. The handler function should accept both GET requests and POST requests. [1/2]
+    * If the handler receives a GET request, then it should render the template for the donation creation page. [COMPLETE]
+    * If the handler receives a POST request (a form submission):
+        **It should attempt to retrieve the name of the donor and the amount of the donation from the form submission.
+        **It should retrieve the donor from the database with the indicated name,
+        **and create a new donation with the indicated donor and donation amount.
+        **Then it should redirect the visitor to the home page.
 
-2. Add navigation elements in `base.jinja2` to the top of both pages. The navigation elements should include links to both the home page and your new donation-creation page.
+2. Add navigation elements in `base.jinja2` to the top of both pages.
+The navigation elements should include links to: [2/2]
+the home page [COMPLETE]
+new donation-creation page [COMPLETE]
 
 3. Publish your work to Heroku. If you publish your work to Heroku and then make changes to your application, you will need to publish those changes by commiting your work to your git repository and then executing `git push heroku master`. Make sure that you also `git push origin master` to push your changes to GitHub.
 
