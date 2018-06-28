@@ -10,13 +10,13 @@ Your task is to:
   * The page should have a form, with a field for the donor name and a field for the amount of the donation. [COMPLETE]
   * The method of the form should be POST. [COMPLETE]
   * You will need to create a template for this page, inside of the `templates` directory. The template should inherit from `base.jinja2`.
-  * You should create a route and a handler function inside of `main.py`. The handler function should accept both GET requests and POST requests. [1/2]
+  * You should create a route and a handler function inside of `main.py`. The handler function should accept both GET requests and POST requests. [2/2]
     * If the handler receives a GET request, then it should render the template for the donation creation page. [COMPLETE]
     * If the handler receives a POST request (a form submission):
-        **It should attempt to retrieve the name of the donor and the amount of the donation from the form submission.
-        **It should retrieve the donor from the database with the indicated name,
-        **and create a new donation with the indicated donor and donation amount.
-        **Then it should redirect the visitor to the home page.
+        **It should attempt to retrieve the name of the donor and the amount of the donation from the form submission. [COMPLETE]
+        **It should retrieve the donor from the database with the indicated name, [COMPLETE]
+        **and create a new donation with the indicated donor and donation amount. [COMPLETE]
+        **Then it should redirect the visitor to the home page. [COMPLETE]
 
 2. Add navigation elements in `base.jinja2` to the top of both pages.
 The navigation elements should include links to: [2/2]
@@ -61,9 +61,11 @@ $ heroku open
 Here are some *optional* ways that you can extend your application:
 
 1. Think about what can go wrong with form submission. What would you like to do if a user enters a name that _does not exist_ in the database of donors? One possibility would be to re-display the donation creation form and inject a message describing the error. Another possibility would be to _create_ a new donor with the given name, along with the indicated donation. Implement either solution.
+JC: handled # 1 above by using get_or_create in add function
 
 2. Allow all visitors to view the page of donations, but require that users _login_ in order to enter a donation. This would involve new pages, new models, changes to the database `setup.py` file, and the use of a secret key to encode values into the session.
 
 3. Create a page that allows visitors to view all donations from a single donor. You could accomplish this by creating a new page with a form that allows visitors to submit the name of the donor that they would like to see donations for. If the form has been submitted, then the handler function would retrieve that name, find the indicated donor, retrieve all of their donations, and then inject them into the page to be rendered. Ideally, the method of the form would be GET. This extension would include some steps or combinations of code that I may not have demonstrated in the lesson, but that you could probably puzzle out.
+JC: Working on this, page is up but currently stuck trying to return the db results to page
 
 If you choose to perform any of these *optional* extensions, then let us know as a comment to your submission!
